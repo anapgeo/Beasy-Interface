@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
 
-const LoginPage = () => {
+const LoginPage = ({ onAuthenticate }) => {
   const [formData, setFormData] = useState({
     username: '',
     password: '',
@@ -38,6 +38,7 @@ const LoginPage = () => {
       console.log('User authenticated!', user);
       // Perform actions for authenticated users, e.g., store authentication state
       setAuthenticatedUser(user);
+      onAuthenticate(true)
       setError(null); // Clear any previous error
       navigate('/home'); // Redirect to the Home page
     } else {
