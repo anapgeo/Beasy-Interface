@@ -1,12 +1,13 @@
 // src/App.js
 import React, { useState } from 'react';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
 import Users from './components/Users/UserList.js';
 import Appointments from './components/Appointments/Appointments.js';
 import NavigationBar from './components/Navigation-Bar/NavigationBar.js';
 import CreateUser from './components/Create-User/CreateUser.js';
 import LoginPage from './components/Login/Login.js';
 import Home from './components/HomePage/HomePage.js';
+import ServicePage from './components/MakeAppointment/ServicePage.js';
 
 const App = () => {
   const [authenticatedUser, setAuthenticatedUser] = useState(null);
@@ -15,36 +16,81 @@ const App = () => {
     <Router>
       <div>
         <Routes>
-          {/* Pass setAuthenticatedUser to LoginPage */}
-          <Route path="/" element={<LoginPage onAuthenticate={setAuthenticatedUser} />} />
+          <Route
+            path="/"
+            element={
+              authenticatedUser ? (
+                <Navigate to="/home" replace />
+              ) : (
+                <LoginPage onAuthenticate={setAuthenticatedUser} />
+              )
+            }
+          />
           <Route
             path="/home"
-            element={<PrivateRoute element={<div><NavigationBar/> <Home/> </div>} authenticatedUser={authenticatedUser} />}
+            element={
+              authenticatedUser ? (
+                <div>
+                  <NavigationBar />
+                  <Home />
+                </div>
+              ) : (
+                <Navigate to="/" replace />
+              )
+            }
           />
           <Route
             path="/create-user"
-            element={<PrivateRoute element={<div><NavigationBar/> <CreateUser/> </div>} authenticatedUser={authenticatedUser} />}
+            element={
+              <div>
+               
+                <CreateUser />
+              </div>
+            }
+          />
+          <Route
+            path="/make-appointment"
+            element={
+              authenticatedUser ? (
+                <div>
+                  <NavigationBar />
+                  <ServicePage />
+                </div>
+              ) : (
+                <Navigate to="/" replace />
+              )
+            }
           />
           <Route
             path="/users"
-            element={<PrivateRoute element={<div><NavigationBar/> <Users/> </div>} authenticatedUser={authenticatedUser} />}
+            element={
+              authenticatedUser ? (
+                <div>
+                  <NavigationBar />
+                  <Users />
+                </div>
+              ) : (
+                <Navigate to="/" replace />
+              )
+            }
           />
           <Route
             path="/appointments"
-            element={<PrivateRoute element={<div><NavigationBar/> <Appointments/> </div>} authenticatedUser={authenticatedUser} />}
+            element={
+              authenticatedUser ? (
+                <div>
+                  <NavigationBar />
+                  <Appointments />
+                </div>
+              ) : (
+                <Navigate to="/" replace />
+              )
+            }
           />
         </Routes>
       </div>
     </Router>
   );
-};
-
-const PrivateRoute = ({ element, authenticatedUser }) => {
-  // Check if the user is authenticated
-  const isAuthenticated = authenticatedUser !== null;
-
-  // If authenticated, render the specified element; otherwise, redirect to the login page
-  return isAuthenticated ? element : null;
 };
 
 export default App;

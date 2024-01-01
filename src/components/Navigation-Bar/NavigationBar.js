@@ -11,8 +11,9 @@ const NavigationBar = () => {
         <li>
           <Link to="/home">Home</Link>
         </li>
+       
         <li>
-          <Link to="/create-user">Create User</Link>
+          <Link to="/make-appointment">Make an appointment</Link>
         </li>
         <li>
           <Link to="/users">Users</Link>

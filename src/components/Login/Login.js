@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, Link } from 'react-router-dom';
 
 const LoginPage = ({ onAuthenticate }) => {
   const [formData, setFormData] = useState({
@@ -74,7 +74,17 @@ const LoginPage = ({ onAuthenticate }) => {
         />
 
         <button type="submit">Login</button>
+
+        {/* Button to redirect to create user page */}
+        <Link to="/create-user">Create User</Link>
+
       </form>
+
+        <p> If you don't have account, create one:</p>
+        
+      <Link to="/create-user">
+          <button type="button">Create Account</button>
+    </Link>
     </div>
   );
 };
