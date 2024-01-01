@@ -1,0 +1,15 @@
+/* src/components/UserList.css */
+.user-table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+.user-table th, .user-table td {
+  border: 1px solid #dddddd;
+  text-align: left;
+  padding: 8px;
+}
+
+.user-table th {
+  background-color: #f2f2f2;
+}

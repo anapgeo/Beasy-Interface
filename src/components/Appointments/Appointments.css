@@ -1,0 +1,15 @@
+/* src/components/Appointments.css */
+.appointments-table {
+    border-collapse: collapse;
+    width: 100%;
+  }
+  
+  .appointments-table th, .appointments-table td {
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 8px;
+  }
+  
+  .appointments-table th {
+    background-color: #f2f2f2;
+  }

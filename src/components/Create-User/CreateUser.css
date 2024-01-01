@@ -1,0 +1,25 @@
+
+.create-user-form label {
+    display: block;
+    margin-bottom: 8px;
+  }
+  
+  .create-user-form input {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 16px;
+    box-sizing: border-box;
+  }
+  
+  .create-user-form button {
+    background-color: #3498db;
+    color: #fff;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .create-user-form button:hover {
+    background-color: #2980b9;
+  }
