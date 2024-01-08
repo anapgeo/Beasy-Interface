@@ -19,6 +19,8 @@
 1. `npm install` για να εγκατασταθουν τα απαραίτητα dependencies
 2. `npm start` για να ξεκινήσει η εφαρμογή
 
-**Σημείωση**:Προυπόθεση για να τρέξει ομαλά η εφαρμογή στο browser θα πρέπει να χρησιμοποιήσετε ένα extension όπως [αυτή](https://chromewebstore.google.com/detail/moesif-origin-cors-change/digfbfaphojjndkpccljibejjbppifbc)
+**Σημείωσεις**:
+1. Προυπόθεση για να τρέξει ομαλά η εφαρμογή στο browser θα πρέπει να χρησιμοποιήσετε ένα extension όπως [αυτή](https://chromewebstore.google.com/detail/moesif-origin-cors-change/digfbfaphojjndkpccljibejjbppifbc)
+2. Θα πρέπει πρώτα να τρέξει η backend εφαρμογή και μετά η frontend
 
 
