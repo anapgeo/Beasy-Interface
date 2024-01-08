@@ -3,8 +3,9 @@
 import React, { useState } from 'react';
 import axios from 'axios';
 import './CreateUser.css'
-
+import { useNavigate } from 'react-router-dom'; // Import useNavigate
 const CreateUser = () => {
+  const navigate = useNavigate(); // Initialize useNavigate
   const [formData, setFormData] = useState({
     user_ID: '',
     username: '',
@@ -88,6 +89,9 @@ const CreateUser = () => {
         location_ID: '',
         street: '',
       });
+      
+        // Redirect to the root path after successful user creation
+        navigate('/');
 
       // You can also add logic for handling successful submission, e.g., show a success message.
     } catch (error) {
