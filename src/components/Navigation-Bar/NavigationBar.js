@@ -11,16 +11,13 @@ const NavigationBar = () => {
         <li>
           <Link to="/home">Home</Link>
         </li>
-       
+        <li>
+          <Link to="/my-appointment">My appointments</Link>
+        </li>
         <li>
           <Link to="/make-appointment">Make an appointment</Link>
         </li>
-        <li>
-          <Link to="/users">Users</Link>
-        </li>
-        <li>
-          <Link to="/appointments">Appointments</Link>
-        </li>
+     
       </ul>
     </nav>
   );

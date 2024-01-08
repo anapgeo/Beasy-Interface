@@ -8,6 +8,7 @@ import CreateUser from './components/Create-User/CreateUser.js';
 import LoginPage from './components/Login/Login.js';
 import Home from './components/HomePage/HomePage.js';
 import ServicePage from './components/MakeAppointment/ServicePage.js';
+import MyAppointmentPage from './components/MyAppointments/MyAppointments.js';
 import { AuthProvider, useAuth } from './AuthContext'; // Import AuthProvider and useAuth
 
 const ProtectedRoute = ({ element }) => {
@@ -31,6 +32,10 @@ const App = () => {
             <Route
               path="/make-appointment"
               element={<ProtectedRoute element={<div><NavigationBar /><ServicePage /></div>} />}
+            />
+            <Route
+              path="/my-appointment"
+              element={<ProtectedRoute element={<div><NavigationBar /><MyAppointmentPage /></div>} />}
             />
             <Route
               path="/users"

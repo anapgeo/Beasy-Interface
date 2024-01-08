@@ -33,7 +33,8 @@ const LoginPage = () => {
 
   const handleSubmit = e => {
     e.preventDefault();
-
+    console.log(users)
+    
     // Check if the entered username and password match any user in the local user list
     const user = users.find(
       user => user.username === formData.username && user.password === formData.password
